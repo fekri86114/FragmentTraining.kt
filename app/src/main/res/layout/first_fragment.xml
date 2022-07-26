@@ -20,6 +20,14 @@
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:text="go to second fragment"/>
+        android:text="open second fragment"/>
+
+    <FrameLayout
+        android:id="@+id/frame_first_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
