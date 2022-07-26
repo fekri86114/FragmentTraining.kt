@@ -21,10 +21,10 @@ class FragmentFirst: Fragment() {
 
         binding.btnGoToSecondFragment.setOnClickListener {
 
-            // replace fragment -> fragment second ;-)
+            // load second fragment in first fragment :
 
-            val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_main_container, FragmentSecond())
+            val transaction = childFragmentManager.beginTransaction()
+            transaction.add(R.id.frame_first_fragment_container, FragmentSecond())
             transaction.addToBackStack(null)
             transaction.commit()
 
