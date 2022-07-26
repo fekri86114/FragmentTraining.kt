@@ -2,11 +2,10 @@ package com.app.fragments.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.fragments.R
 import com.app.fragments.databinding.ActivityMainBinding
-import com.app.fragments.ux.dialog.MainDialog
+import com.app.fragments.ux.dialog.MainBottomSheet
 
-class MainActivity : AppCompatActivity(), MainDialog.MainDialogEvent {
+class MainActivity : AppCompatActivity(), MainBottomSheet.MainDialogEvent {
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,9 +15,9 @@ class MainActivity : AppCompatActivity(), MainDialog.MainDialogEvent {
 
         binding.btnOpenDialogFragment.setOnClickListener {
 
-            val mainDialog = MainDialog(this)
+            val mainBottomSheet = MainBottomSheet(this)
 
-            mainDialog.show( supportFragmentManager, null)
+            mainBottomSheet.show( supportFragmentManager, null)
 
         }
 

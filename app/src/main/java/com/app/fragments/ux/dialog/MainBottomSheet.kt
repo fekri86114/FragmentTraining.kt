@@ -1,25 +1,20 @@
 package com.app.fragments.ux.dialog
 
-import android.app.Dialog
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.DialogFragment
 import com.app.fragments.databinding.DialogMainBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class MainDialog(private val mainDialogEvent: MainDialogEvent) : DialogFragment() {
+class MainBottomSheet(private val mainDialogEvent: MainDialogEvent) : BottomSheetDialogFragment() {
     lateinit var binding: DialogMainBinding
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-
-//        val view = LayoutInflater.from(context).inflate(R.layout.dialog_main, null, false)
-
-
-        val dialog = AlertDialog.Builder(requireContext())
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         binding = DialogMainBinding.inflate(layoutInflater, null, false)
 
-        dialog.setView(binding.root)
 
         binding.btnCancel.setOnClickListener {
             dismiss()
@@ -44,7 +39,8 @@ class MainDialog(private val mainDialogEvent: MainDialogEvent) : DialogFragment(
 
         }
 
-        return dialog.create()
+        return binding.root
+
     }
 
     interface MainDialogEvent {
