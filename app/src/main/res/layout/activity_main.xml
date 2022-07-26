@@ -4,23 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".ui.activity.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/frame_main_container"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_margin="10dp"
-        android:background="@color/white" />
-
-    <Button
-        android:id="@+id/btn_open_fragment_first"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="open first fragment"/>
+        android:id="@+id/txt_main"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:hint="Name + Last name"
+        android:fontFamily="sans-serif-medium" />
+
+
+    <Button
+        android:id="@+id/btn_open_dialog_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="open dialog fragment"/>
 
 
 </LinearLayout>

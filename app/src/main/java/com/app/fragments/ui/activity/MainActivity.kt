@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.fragments.R
 import com.app.fragments.databinding.ActivityMainBinding
-import com.app.fragments.ui.fragment.FragmentFirst
+import com.app.fragments.ux.dialog.MainDialog
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainDialog.MainDialogEvent {
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,15 +14,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnOpenFragmentFirst.setOnClickListener {
+        binding.btnOpenDialogFragment.setOnClickListener {
 
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.add(R.id.frame_main_container, FragmentFirst())
-            transaction.addToBackStack(null)
-            transaction.commit()
+            val mainDialog = MainDialog(this)
+
+            mainDialog.show( supportFragmentManager, null)
 
         }
 
+    }
+
+    override fun sendTextData(data: String) {
+        binding.txtMain.text = data
     }
 
 }
