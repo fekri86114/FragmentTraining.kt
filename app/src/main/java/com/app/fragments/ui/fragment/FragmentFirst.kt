@@ -35,7 +35,6 @@ class FragmentFirst: Fragment() {
                 val bundle = Bundle()
                 bundle.putParcelable( SEND_PARCELABLE_KEY , data )
 
-
                 val fragment = FragmentSecond()
                 fragment.arguments = bundle
 
