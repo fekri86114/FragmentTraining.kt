@@ -11,7 +11,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 class MainBottomSheet(private val mainDialogEvent: MainDialogEvent) : BottomSheetDialogFragment() {
     lateinit var binding: DialogMainBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         binding = DialogMainBinding.inflate(layoutInflater, null, false)
 

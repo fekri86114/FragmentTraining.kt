@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity(), MainBottomSheet.MainDialogEvent {
 
             val mainBottomSheet = MainBottomSheet(this)
 
-            mainBottomSheet.show( supportFragmentManager, null)
+            mainBottomSheet.show(supportFragmentManager, null)
 
         }
 
