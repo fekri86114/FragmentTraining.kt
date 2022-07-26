@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
             val removeTransaction = supportFragmentManager.beginTransaction()
             removeTransaction.remove(fragmentNow!!)
+//            removeTransaction.addToBackStack(null)
             removeTransaction.commit()
 
         }
@@ -39,16 +40,19 @@ class MainActivity : AppCompatActivity() {
                 0 -> {
                     val transaction = supportFragmentManager.beginTransaction()
                     transaction.add(R.id.frame_main_container, FragmentFirst())
+                    transaction.addToBackStack(null)
                     transaction.commit()
                 }
                 1 -> {
                     val transaction = supportFragmentManager.beginTransaction()
                     transaction.add(R.id.frame_main_container, FragmentSecond())
+                    transaction.addToBackStack(null)
                     transaction.commit()
                 }
                 2 -> {
                     val transaction = supportFragmentManager.beginTransaction()
                     transaction.add(R.id.frame_main_container, FragmentThird())
+                    transaction.addToBackStack(null)
                     transaction.commit()
                 }
 
@@ -62,5 +66,14 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        binding.btnReplaceFragment.setOnClickListener {
+
+             val replaceTransaction = supportFragmentManager.beginTransaction()
+            replaceTransaction.replace(R.id.frame_main_container, FragmentThird())
+            replaceTransaction.commit()
+
+        }
+
     }
+
 }
